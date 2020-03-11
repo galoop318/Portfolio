@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgb(248, 199, 167);
+           
+        }
+
+        .cards {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            /* justify-content: space-around; */
+            flex-wrap: wrap;
+
+        }
+
+        .card {
+            /* height: 70%; */
+            background-color: lightseagreen;
+            width: 24%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: black 1px solid;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 300px;
+        }
+        .current{
+            /* width: 50%; */
+            height: 100px;
+            margin: auto;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="current"></div>
+        <div class="cards">
+            <!-- <div class="card">
+                <div class="card-img">
+                    <img src="http://image.91chep.com/14b6f38d286e4c139feb56067df3494f680_680.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h1>台中市</h1>
+                    <h2>多雲時晴</h2>
+                    <div>
+                        <span>最高溫:20C</span>
+                        <span>最低溫:10C</span><br>
+                        <span>降雨機率</span>
+                    </div>
+                    <div>微冷,需要穿外套</div>
+
+                </div>
+            </div> -->
+
+            
+
+            
+
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-12ED6243-E976-4477-9B30-1BC148E685DE')
+            .then(function (response) {
+                return response.json();
+            })
+            //將API資料經過驗證 確認請求有回應 
+
+            .then(function (weather_array) {
+                console.log(weather_array);
+
+                // weather_array 是物件 所以下方宣告locations要用 . 來連結
+                var locations = weather_array.records.location
+                console.log(locations)
+
+                locations.forEach(location => {
+
+                    var location_name = location.locationName //地名
+                    // console.log(location_name)
+
+                    var Wx = location.weatherElement[0].time[0].parameter.parameterName  //天氣現象
+                    // console.log(Wx)
+
+                    var MaxT = location.weatherElement[4].time[0].parameter.parameterName  //最高溫
+                    // console.log(MaxT)
+
+                    var MinT = location.weatherElement[2].time[0].parameter.parameterName  //最低溫
+                    // console.log(MinT)
+
+                    var Unit = location.weatherElement[4].time[0].parameter.parameterUnit  //溫度符號
+                    // console.log(Unit)
+
+                    var CI = location.weatherElement[3].time[0].parameter.parameterName  //舒適度
+                    // console.log(CI)
+
+                    var PoP = location.weatherElement[1].time[0].parameter.parameterName  //降雨機率
+                    // console.log(PoP)
+                    
+                    var Wx_Value = location.weatherElement[0].time[0].parameter.parameterValue  //天氣代碼
+                    console.log(Wx_Value)
+
+
+                    // 如果天氣代碼等於多少 就顯示哪張圖片
+                    // else if 可以打很多行 不局限於一個而已 最後都不符合的才套用到else
+                    if (Wx_Value == '1' ) {
+                        var weather_icon = 'http://image.91chep.com/e5436bfcbf594731b0a716c37a79c079680_680.jpg'
+                    }
+                    else if (Wx_Value == '2' || Wx_Value == '3' || Wx_Value == '4') {
+                        var weather_icon = 'http://image.91chep.com/14b6f38d286e4c139feb56067df3494f680_680.jpg'
+                    }
+                    else {
+                        var weather_icon = 'http://image.91chep.com/94b3365feea6453ba1f5b01b19143562680_680.jpg'
+                    }
+
+                    var cards = document.querySelector('.cards')
+
+                    cards.innerHTML += `
+                    <div class="card">
+                    <div class="card-img">
+                    <img width="100%" src="${weather_icon}" alt="">
+                    </div>
+                     <div class="content">
+                    <h1>${location_name}</h1>
+                    <h2>${Wx}</h2>
+                    <div>
+                        <span>最高溫:${MaxT}${Unit}</span>
+                        <span>最低溫:${MinT}${Unit}</span><br>
+                        <span>降雨機率:${PoP}</span>
+                    </div>
+                    <div>${CI}</div>
+
+                    </div>
+                    
+                    `
+
+
+                });
+
+                var today = new Date()
+                // 表示月份的整數。由 0 開始（一月）到 11 （十二月）。所以要正確顯示月份需要再+1
+                var current_day = today.getFullYear() + '年' + (today.getMonth()+ 1) + '月' + today.getDate() + '日'
+                var current_time = today.getHours() + ':' + today.getMinutes() 
+
+                var time = document.querySelector('.current')
+
+                time.innerHTML += '現在時間:' + current_day + current_time
+
+
+            });
+            // 開始對資料進行處理
+
+           
+
+    </script>
+</body>
+
+</html>
