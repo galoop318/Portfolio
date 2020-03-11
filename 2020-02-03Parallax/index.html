@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0;
+        background-color: silver;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    #all{
+        width: 80%;
+        margin: auto;
+        min-width: 1024px;
+    }
+    #navbar{
+        /* background-color: slateblue; */
+        width: 80%;
+        height: 180px;
+        position:fixed ;
+        min-width: 1024px;
+        
+    }
+    #top_circle{
+        background-image:url(img/willy.jpg);
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        border-radius: 80px;
+        left: 15px;
+        top: 15px;
+        box-shadow:5px 5px 10px  black;
+    }
+    #btnbox{
+        position: absolute;
+        right: 15px;
+        top: 69px;
+    }
+    .threebtn{
+        background-color: white;
+        height: 45px;
+        line-height: 45px;
+        border: 2px solid black;
+        padding: 0 17px;
+        margin-right: 10px;
+        float: left;
+        transition: 1s  
+    }
+    a:hover .threebtn{
+        color: brown;
+        background-color: palevioletred;
+    }
+    
+    a:active .threebtn{
+        color:green;
+        background-color:black;
+       
+    }
+
+    #area_1{
+        background-image: url(img/area1.jpg);
+    }
+    #area_2{
+        background-image: url(img/area2.jpg);
+    }
+    #area_3{
+        background-image: url(img/area3.jpg);
+    }
+    /* .area_style 這個是類別 一次控制三個area的素質 */
+    .area_style{
+        background-size: cover;
+        /* attachment固定圖片 */
+        background-attachment: fixed;
+        height:calc(100vh - 50vh);
+        width: 100%;
+        padding-top: 50vh;
+    }
+    
+
+    /* #about{
+        background-color: white;
+        height: 45px;
+        line-height: 45px;
+        border: 2px solid black;
+        padding: 0 17px;
+        margin-right: 10px;
+        float: left;
+    } */
+    /* #product{
+        background-color: white;
+        height: 45px;
+        line-height: 45px;
+        border: 2px solid black;
+        padding: 0 17px;
+        margin-right: 10px;
+        float: left;
+    } */
+    /* #contact{
+        background-color: white;
+        height: 45px;
+        line-height: 45px;
+        border: 2px solid black;
+        padding: 0 17px;
+        float: left;
+    } */
+    
+    .area_btm{
+        background-color:rgba(0, 0, 0, 0.6) ;
+        width: 100%;
+        padding: calc(25vh - 50px) 0;
+        min-width: 1024px;
+    }
+    .area_btn{
+        background-color: burlywood;
+        height: 100px;
+        width: 300px;
+        margin: auto;
+    }
+    .area_btn:hover{
+        background-color: salmon;
+        transition: 0.7s;
+    }
+    </style>
+</head>
+
+<body>
+<div id="all">
+    <div id="navbar">
+        <div id="top_circle"></div>
+        <div id="btnbox">
+            <a href="#area_1">
+                <div class="threebtn">關於我們</div>
+            </a>
+
+            <a href="#area_2">
+                <div class="threebtn">全部產品</div>
+            </a>
+
+            <a href="#area_3">
+                <div class="threebtn">聯繫我們</div>
+            </a>
+        </div> 
+    </div>
+    <div id="area_1" class="area_style">
+        
+        <div id="area_1_btm" class="area_btm">
+        <div id="area_1_btn" class="area_btn"></div>
+    </div>
+    
+    <div id="area_2" class="area_style">
+        <div id="area_2_btm" class="area_btm">
+            <div id="area_2_btn" class="area_btn"></div>
+        </div>
+    </div>
+    <div id="area_3" class="area_style">
+        <div id="area_3_btm" class="area_btm">
+            <div id="area_3_btn" class="area_btn"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
