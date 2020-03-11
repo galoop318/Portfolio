@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RWD選單版-Float</title>
+    <style>
+    
+    body{
+        margin:0;
+        background-color: blanchedalmond;
+    }
+    *{
+        box-sizing:border-box;
+    }
+    .all{
+        width: 100%;
+        height:100vh;
+    }
+    .float-1{
+        float:left;
+    }
+
+    .clearfix{
+        clear: both;
+    }
+    
+    /* .pc{
+        display:block;
+    }
+    .phone{
+        display: none;
+    } */
+    .hamburger_menu{
+        width: 25px;
+        height: 25px;
+        background-color: black;
+        display: none;
+
+    }
+    .menu{
+        background-color: pink;
+        width: 366px;
+        height: 100vh;
+        padding: 100px 0 0 0 ;
+        
+    }
+    .logo{
+        background-color: gray;
+        height: 150px;
+        width: 150px;
+        margin:0 auto 100px auto;
+    }
+    #menu_btn{
+        padding: 0 0 0 135px;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        background-color: silver;
+        list-style: none;
+        padding: 10px 20px;
+        margin:0 0 10px 0;
+
+    }
+    .content{
+        /* background-color:chocolate; */
+        width:calc(100% - 366px);
+        height:100vh;
+        padding-top: calc(50vh - 285px);
+        
+    }
+
+    .picturebox{
+        background-color:black;
+        width:960px;
+        height:570px;
+        margin: auto;
+    }
+    .picture_X{
+        background-image:url(img/X.jpg);
+        width: calc(33% - 5px);
+        height: 100%;
+    }
+
+    .picture_Y{
+        background-image:url(img/Y.jpg);
+        width: calc(34% - 10px);
+        height: 100%;
+        margin: 0 10px;    
+    }
+    .picture_Z{
+        background-image:url(img/Z.jpg);
+        width: calc(33% - 5px);
+        height: 100%;
+    }
+    .picture_style{
+        background-position: center;
+        background-size: cover;
+    }
+    .mask{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .mask:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* small PC */
+    @media (max-width: 1326px){
+        
+        .picturebox{
+            width:800px;
+        }
+
+        .picture_X{
+            width: 100%;
+            height: calc(50% - 5px);
+            margin: 0 0 10px 0;
+        }
+
+        .picture_Y{
+            width: calc(50% - 5px);
+            height:calc(50% - 5px);
+            margin:0 10px 0 0;
+        }
+
+        .picture_Z{
+            width:calc(50% - 5px);
+            height:calc(50% - 5px);
+        }
+    }
+    /* table */
+    @media (max-width:1166px){
+        .menu{
+            width: 100%;
+            height: 100px;
+            padding: 10px 25px 10px 25px;
+        }
+        .logo{
+            height: 80px;
+            width: 80px;
+            margin:0;
+            float: left;
+        }
+        #menu_btn{
+            float:right;
+            padding: 20px 0 0 0 ;
+        }
+        li{
+            display: inline-block;
+            margin: unset;
+        }
+        .content{
+            width: 100%;
+            height: calc(100vh - 100px);
+            padding-top:0;
+            padding: calc(50vh - 450px) 10px 0 10px;
+        }
+        .picturebox{
+            width:100%;
+            height: 800px;
+        }
+
+    }
+    /* phone */
+    @media (max-width:700px){
+
+        .hamburger_menu{
+            display: block;
+        }
+        .logo{
+            height: 80px;
+            width: 80px;
+            margin:auto;
+            float: right;
+        }
+        .menu{
+            padding:20px calc(50% - 40px) 20px 20px;
+        }
+
+        .hamburger_menu:hover{
+            background-color:red;
+        }
+
+        .hamburger_menu:hover ~ #menu_btn > .move{
+           left:20px;
+        }
+
+        #menu_btn{
+            float: left;
+            display: block;
+        }
+        
+        ul{
+            display: inline-block; 
+            position: absolute;
+            left: -100px;
+            top: 100px;
+            transition: 0.7s;
+        }
+        li{
+            min-width: 100px;
+            display:block;
+        }
+        
+        .content{
+            height: 150vh;
+            padding:unset;
+            /* width: 100%;
+            height: calc(100vh - 100px);
+            padding-top:0;
+            padding: calc(50vh - 450px) 10px 0 10px; */
+        }
+        .picturebox{
+            width:100%;
+            height:100%;
+            
+        }
+        .picture_X{
+            height: 50vh;
+            margin:0;
+            /* width: 100%;
+            height: calc(50% - 5px);
+            margin: 0 0 10px 0; */
+        }
+
+        .picture_Y{
+            height: 50vh;
+            width: 100%;
+            margin:0;
+        }
+
+        .picture_Z{
+            height: 50vh;
+            width: 100%;
+            margin:0;
+        }
+    }
+    </style>
+    
+
+
+</head>
+
+
+
+<body>
+    <div class="all">
+        <div class="menu float-1">
+            <div class="hamburger_menu float-1"></div> 
+            <div class="logo"></div>
+            <div id="menu_btn" class="float-1">
+                <ul class="move">
+                    <li>AAA</li>
+                    <li>BBB</li>
+                    <li>CCC</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="content float-1">
+            <div class="picturebox">
+                <div class="picture_X float-1 picture_style">
+                    <div class="mask"></div>
+                </div>
+                <div class="picture_Y float-1 picture_style">
+                    <div class="mask"></div>
+                </div>
+                <div class="picture_Z float-1 picture_style">
+                    <div class="mask"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
