@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        
+        .bgcolor{
+            background-color: blanchedalmond;
+        }
+
+        .bgimg{
+            width: 100%;
+            height: 50vh;
+            background-image: url(https://d20aeo683mqd6t.cloudfront.net/zh-hant/articles/title_images/000/039/096/original/shutterstock_613997048.jpg?2019&d=750x400);
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .mask{
+            background-color: rgba(255, 255, 255, 0.452);
+            width: 100%;
+            height: 50vh;
+            padding: calc(25vh - 50px) 0;
+        }
+
+        .textwidth{
+            width: 200px;
+            height: 100px;
+            text-align:center;
+            line-height:100px
+        }
+
+        .footerbox{
+            width: 100%;
+            height: 30px;
+        }
+    </style>
+
+    </head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="parallax" class="bgimg">
+        <div class="mask">
+            <div class="container bgcolor textwidth m-auto d-none d-md-block">
+                    <span>京阪三天兩夜</span>   
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="cards">
+            <div class="container ">
+                <div class="row my-5  ">
+                    <div class=" col-12 col-sm-12 col-md-4 ">
+                        <div class="card">
+                            <img  
+                                src="https://blog.kkday.com/wp-content/uploads/batch_shutterstock_514731451-2.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    京都為美食、購物與人氣觀光景點雲集的熱門旅遊地點。其中有清水寺與八坂神社等知名神社佛閣聚集的「東山」、盡享竹林小徑與渡月橋等大自然之美的「嵐山」、以紅色千座鳥居聞名的伏見稻荷大社與酒窖櫛次鱗比的「伏見」
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-sm-12 col-md-4 ">
+                        <div class="card">
+                            <img  
+                                src="https://blog.kkday.com/wp-content/uploads/lin-mei-159435-1.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    綿延不絕的千本鳥居，更是讓許多外國觀光客慕名而來，前來此地許願的人們往往會捐款在神社境內豎立一座鳥居來表達對神明的敬意，因為香火鼎盛，也讓稻荷大社擁有著數量驚人的大小鳥居。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-sm-12 col-md-4 ">
+                        <div class="card">
+                            <img 
+                                src="https://blog.kkday.com/wp-content/uploads/batch_Fotolia_158946231_Subscription_Yearly_M-2.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    京都市內最熱鬧的區域除了京都車站的週邊之外，不能錯過的就是河原町啦！在古意盎然的古都中，有著百貨公司林立的街道，似乎只要跨過了一條四条大橋，就身處在截然不同的世界，這樣的魅力大概也只有京都能充分展現！
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section id="midcontent" >
+            <div class="container">
+                <div class="row my-5 bgcolor p-3">
+                    
+                    <div class="col-sm-12 col-md-6 order-md-1 order-sm-2">
+                        <img width="100%"src="https://dsimg.wowjpn.goo.ne.jp/rs/?src=https://wow-j.com/images/ext/allguides/01419/01419_005.jpg&maxw=770&maxh=0&resize=1"
+                            alt="">
+                    </div>
+                    <div class="col-sm-12 col-md-6 order-md-2 order-sm-1" >
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate praesentium inventore quia,
+                            dolor corporis deleniti sequi doloribus quasi culpa nemo enim facere, non eius est mollitia
+                            laudantium neque perferendis officia voluptatem ad. Eaque eveniet ut, est obcaecati omnis beatae
+                            repellat reiciendis at veritatis doloremque dicta inventore excepturi facere! Quod, incidunt!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+    </main>
+
+
+    
+
+
+    <footer class="footerbox  m-3 text-center">
+        <span>此頁面內容僅為全端與phthon資料探勘工程養成班使用</span>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

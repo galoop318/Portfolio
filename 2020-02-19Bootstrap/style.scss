@@ -1,0 +1,22 @@
+$green:  green;
+$fon-30:30px;
+$fon-20:10px;
+
+a{
+    color: red;
+}
+
+.card{
+    border: 1px black solid;
+    width: 50%;
+    
+
+    img{
+        width: 100%;
+    }
+
+    p{
+        color: $green;
+        font-size:$fon-20 ;
+    }
+}
