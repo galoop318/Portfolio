@@ -508,6 +508,14 @@ body {
           justify-content: flex-end;
 }
 
+@media (max-width: 576px) {
+  .home_ig_title .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .home_ig_title .container .home_ig_title_text {
   display: -webkit-box;
   display: -ms-flexbox;

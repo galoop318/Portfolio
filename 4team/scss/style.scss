@@ -341,6 +341,9 @@ body{
     .container{
         display: flex;
         justify-content: flex-end;
+        @media (max-width: 576px){
+            justify-content: center;
+        } 
         .home_ig_title_text{
             display: flex;
             justify-content: space-between;
@@ -352,6 +355,7 @@ body{
                 margin-bottom: unset;
                 margin:60px 0;
             } 
+             
         }
     }
 }
